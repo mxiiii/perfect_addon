@@ -44,7 +44,7 @@ sed -i '400s/.*/ENABLE_AUTO_IDS_REGEX   					Y;/' /etc/psad/psad.conf
 sed -i '449s/.*/FLUSH_IPT_AT_INIT   					N;/' /etc/psad/psad.conf
 sed -i '456s/.*/TCPWRAPPERS_BLOCK_METHOD   					Y;/' /etc/psad/psad.conf
 sed -i '248s/.*/MIN_DANGER_LEVEL   					2;/' /etc/psad/psad.conf
-sed -i '251s/.*/MAIL_ALERT_DANGER_LEVEL   					4;/' /etc/psad/psad.conf
+sed -i '251s/.*/EMAIL_ALERT_DANGER_LEVEL   					4;/' /etc/psad/psad.conf
 
 iptables -A INPUT -j LOG
 iptables -A FORWARD -j LOG 
