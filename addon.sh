@@ -74,3 +74,5 @@ cat > /etc/cron.d/psda <<END
 # EOF
 
 END
+
+apt-get install python-pip
