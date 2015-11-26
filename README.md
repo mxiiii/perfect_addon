@@ -4,3 +4,5 @@
 Addon für https://github.com/zypr/perfectrootserver/
 
 Das Patch_File ist unabhängig von der Version des perfectrootserver
+
+Addons: PSAD / FSNORT / NXTOP
