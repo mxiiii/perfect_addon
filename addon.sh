@@ -75,4 +75,5 @@ cat > /etc/cron.d/psda <<END
 
 END
 
-apt-get install python-pip
+apt-get install python-pip -y
+pip install ngxtop
