@@ -35,16 +35,19 @@ systemctl stop psad
 
 sed -i '100s/.*/ENABLE_PSADWATCHD   					Y;/' /etc/psad/psad.conf
 sed -i '116s/.*/ENABLE_PERSISTENCE   					N;/' /etc/psad/psad.conf
-sed -i '169s/.*/IPT_SYSLOG_FILE   					\/var\/log\/arno-iptables-firewall;/' /etc/psad/psad.conf
+sed -i '169s/.*/IPT_SYSLOG_FILE   					\/var\/log\/firewall.log;/' /etc/psad/psad.conf
+sed -i '248s/.*/MIN_DANGER_LEVEL   					1;/' /etc/psad/psad.conf
+sed -i '257s/.*/ENABLE_IPV6_DETECTION   					N;/' /etc/psad/psad.conf
 sed -i '300s/.*/IMPORT_OLD_SCANS   					Y;/' /etc/psad/psad.conf
 sed -i '380s/.*/ENABLE_AUTO_IDS   					Y;/' /etc/psad/psad.conf
-sed -i '384s/.*/AUTO_IDS_DANGER_LEVEL   					2;/' /etc/psad/psad.conf
+sed -i '384s/.*/AUTO_IDS_DANGER_LEVEL   					1;/' /etc/psad/psad.conf
+sed -i '388s/.*/AUTO_BLOCK_TIMEOUT   					86400;/' /etc/psad/psad.conf
 sed -i '400s/.*/ENABLE_AUTO_IDS_REGEX   					Y;/' /etc/psad/psad.conf
+#sed -i '403s/.*/AUTO_BLOCK_REGEX   					sid;/' /etc/psad/psad.conf
 #sed -i '412s/.*/ENABLE_AUTO_IDS_EMAILS   					N;/' /etc/psad/psad.conf
+sed -i '416s/.*/IPTABLES_BLOCK_METHOD   					N;/' /etc/psad/psad.conf
 sed -i '449s/.*/FLUSH_IPT_AT_INIT   					N;/' /etc/psad/psad.conf
 sed -i '456s/.*/TCPWRAPPERS_BLOCK_METHOD   					Y;/' /etc/psad/psad.conf
-sed -i '248s/.*/MIN_DANGER_LEVEL   					2;/' /etc/psad/psad.conf
-sed -i '251s/.*/EMAIL_ALERT_DANGER_LEVEL   					4;/' /etc/psad/psad.conf
 
 iptables -A INPUT -j LOG
 iptables -A FORWARD -j LOG 
