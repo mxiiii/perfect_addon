@@ -68,7 +68,7 @@ cat > /etc/cron.d/psda <<END
 45 4 * * * root /usr/sbin/psad --sig-update	>/dev/null 2>&1
 47 4 * * * root /usr/sbin/psad -H	>/dev/null 2>&1
 10 5 * * 3 root /usr/sbin/fwsnort --update-rules >/dev/null 2>&1
-15 5 * * 3 root /usr/sbin/fwsnort >/dev/null 2>&1
+15 5 * * 3 root /usr/sbin/fwsnort --no-ipt-test --verbose >/dev/null 2>&1
 30 5 * * 3 root /var/lib/fwsnort/fwsnort.sh >/dev/null 2>&1
 
 # EOF
